@@ -1,0 +1,20 @@
+---
+title: "Hi 👋, I am Mickaël!"
+image: "https://avatars0.githubusercontent.com/u/8896044?s=400&u=c770c719bf00f57642f5c4bad8274ffe1c122308&v=4"
+color1: "#3B528BFF"
+color2: "#5DC863FF"
+angle: 145
+links:
+  - label: Curricylum Vitae
+    url: "http://mickael.canouil.fr/"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/mickaelcanouil"
+  - label: Twitter
+    url: "https://twitter.com/mickaelcanouil"
+output:
+  postcards::onofre
+---
+ 
+I am currently working as the head of the biostatistics team of the Inserm U1283 / CNRS UMR 8199 unit (Functional (Epi)genomics and Molecular Physiology of Diabetes and Related Diseases) for the Institut Pasteur de Lille (France, Lille).
+
+And when I am not working, I like watching movies (2,834) and playing with R!
