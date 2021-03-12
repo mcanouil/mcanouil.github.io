@@ -7,13 +7,26 @@ angle: 145
 links:
   - label: Curriculum Vitae
     url: "http://mickael.canouil.fr/"
+  - label: Github
+    url: "https://github.com/mcanouil/"
   - label: LinkedIn
-    url: "https://www.linkedin.com/in/mickaelcanouil"
+    url: "https://www.linkedin.com/in/mickaelcanouil/"
   - label: Twitter
-    url: "https://twitter.com/mickaelcanouil"
+    url: "https://twitter.com/mickaelcanouil/"
 output:
   postcards::onofre
 ---
+
+```{css, echo = FALSE}
+.rounded-circle {
+  border-style: solid;
+  border-width: 2pt;
+  border-color: #ffffff;
+  border-radius: 50%;
+  padding: 5pt;
+}
+```
+
 
 I am currently working as the <b>head of the biostatistics team</b>  
 of the <a href="http://www.good.cnrs.fr/?lang=en" style="color:white;"><b>Inserm U1283 / CNRS UMR 8199 unit</b>  
