@@ -36,7 +36,7 @@ body {
 ```
 
 
-I am currently working as the <b>head of the biostatistics team</b>  
+I am currently working as the <b>Head of Biostatistics</b>  
 of the <a href="http://www.good.cnrs.fr/?lang=en" style="color:white;"><b>Inserm U1283 / CNRS UMR 8199 unit</b>  
 <i>(Functional (Epi)genomics and Molecular Physiology of Diabetes and Related Diseases)</i></a>  
 for the <a href="https://www.pasteur-lille.fr/5/home/" style="color:white;"><b>Institut Pasteur de Lille</b></a> (France, Lille).
