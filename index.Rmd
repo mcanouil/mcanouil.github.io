@@ -42,3 +42,5 @@ of the <a href="http://www.good.cnrs.fr/?lang=en" style="color:white;"><b>Inserm
 for the <a href="https://www.pasteur-lille.fr/5/home/" style="color:white;"><b>Institut Pasteur de Lille</b></a> (France, Lille).
 
 And when I am not working, I like watching movies (2,943) and playing with R!
+
+<img alt="Movies seen in a movie theatre year streak" src="https://raw.githubusercontent.com/mcanouil/imdb_ratings/main/media/streak.svg" />
