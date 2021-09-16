@@ -1,0 +1,55 @@
+name: Update INDEX
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: r-lib/actions/setup-pandoc@master
+    - uses: r-lib/actions/setup-r@master
+    - name: Cache R packages
+      uses: actions/cache@v1
+      with:
+        path: ${{ env.R_LIBS_USER }}
+        key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+        restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+    - name: Install rvest
+      run: |
+        sudo apt-get install libcurl4-openssl-dev
+        Rscript -e 'install.packages("rvest")'
+    - name: Install postcards
+      run: |
+        Rscript -e 'install.packages("postcards")'
+    - name: Compute index.Rmd
+      run: | 
+        library(rvest)
+        writeLines(
+          gsub(
+            pattern = "movies \\([0-9,]*\\) and",
+            replacement = read_html("https://www.imdb.com/user/ur56341222/ratings") %>%
+              html_nodes("div.header.filmosearch") %>%
+              html_text() %>%
+              gsub(".*\\(of ([^)]*)\\).*", "movies (\\1) and", .),
+            x = readLines("index.Rmd")
+          ),
+          con = "index.Rmd"
+        )
+        library(rmarkdown)
+        render("index.Rmd", output_dir = "docs")
+      shell: Rscript {0}
+    - name: Commit index.Rmd
+      run: | 
+        git config --local user.name "$GITHUB_ACTOR"
+        git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git add index.Rmd
+        git add docs/index.html
+        git commit -am 'Update index' || echo "No changes to commit"
+        git push || echo "No changes to commit"

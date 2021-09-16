@@ -1,0 +1,44 @@
+---
+title: "Hi 👋, I am Mickaël!"
+image: "https://avatars.githubusercontent.com/u/8896044"
+color1: "#333333FF"
+color2: "#666666FF"
+angle: 145
+links:
+  - label: Website
+    url: "https://mickael.canouil.fr/"
+  - label: Curriculum Vitae
+    url: "https://m.canouil.fr/curriculum_vitae/"
+  - label: Github
+    url: "https://github.com/mcanouil/"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/mickaelcanouil/"
+  - label: Twitter
+    url: "https://twitter.com/mickaelcanouil/"
+output:
+  postcards::onofre
+---
+
+```{css, echo = FALSE}
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i);
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+
+body {
+  font-family: 'Alegreya Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+}
+.rounded-circle {
+  border-style: solid;
+  border-width: 2pt;
+  border-color: #ffffff;
+  border-radius: 50%;
+  padding: 5pt;
+}
+```
+
+
+I am currently working as the <b>Head of Biostatistics</b>  
+of the <a href="http://www.good.cnrs.fr/?lang=en" style="color:white;"><b>Inserm U1283 / CNRS UMR 8199 unit</b>  
+<i>(Functional (Epi)genomics and Molecular Physiology of Diabetes and Related Diseases)</i></a>  
+for the <a href="https://www.pasteur-lille.fr/5/home/" style="color:white;"><b>Institut Pasteur de Lille</b></a> (France, Lille).
+
+And when I am not working, I like watching movies (2,988) and playing with R!
