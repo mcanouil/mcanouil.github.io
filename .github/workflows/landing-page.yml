@@ -1,4 +1,4 @@
-name: Update INDEX
+name: Update HTML Landing Page
 
 on:
   push:
@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: r-lib/actions/setup-pandoc@master
-    - uses: r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-pandoc@v1
+    - uses: r-lib/actions/setup-r@v1
     - name: Cache R packages
       uses: actions/cache@v1
       with:
@@ -32,24 +32,22 @@ jobs:
       run: | 
         library(rvest)
         writeLines(
-          gsub(
+          sub(
             pattern = "movies \\([0-9,]*\\) and",
             replacement = read_html("https://www.imdb.com/user/ur56341222/ratings") %>%
               html_nodes("div.header.filmosearch") %>%
               html_text() %>%
-              gsub(".*\\(of ([^)]*)\\).*", "movies (\\1) and", .),
+              sub(".*\\(of ([^)]*)\\).*", "movies (\\1) and", .),
             x = readLines("index.Rmd")
           ),
           con = "index.Rmd"
         )
-        library(rmarkdown)
-        render("index.Rmd", output_dir = "docs")
+        rmarkdown::render("index.Rmd", output_dir = "docs")
       shell: Rscript {0}
     - name: Commit index.Rmd
       run: | 
         git config --local user.name "$GITHUB_ACTOR"
         git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        git add index.Rmd
-        git add docs/index.html
+        git add index.Rmd docs/index.html
         git commit -am 'Update index' || echo "No changes to commit"
         git push || echo "No changes to commit"
