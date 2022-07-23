@@ -12,38 +12,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: r-lib/actions/setup-pandoc@v2
-    - uses: r-lib/actions/setup-r@v2
-    - uses: r-lib/actions/setup-r-dependencies@v2
-      with:
-        packages: |
-          any::rvest
-          any::postcards
-    - name: Compute index.Rmd
-      run: | 
-        library(rvest)
-        writeLines(
-          sub(
-            pattern = "movies \\([0-9,]*\\) and",
-            replacement = read_html("https://www.imdb.com/user/ur56341222/ratings") %>%
-              html_nodes("div.header.filmosearch") %>%
-              html_text() %>%
-              sub(".*\\(of ([^)]*)\\).*", "movies (\\1) and", .),
-            x = readLines("index.Rmd")
-          ),
-          con = "index.Rmd"
-        )
-        rmarkdown::render("index.Rmd", output_dir = "docs")
-      shell: Rscript {0}
-    - name: Create Pull Request
-      id: cpr
-      uses: peter-evans/create-pull-request@v4
-      with:
-        commit-message: "ci: automatic update"
-        signoff: false
-        branch: auto-detected-updates
-        delete-branch: true
-        title: "Automatic update"
-        committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::rvest
+            any::postcards
+      - name: Compute index.Rmd
+        run: | 
+          library(rvest)
+          writeLines(
+            sub(
+              pattern = "movies \\([0-9,]*\\) and",
+              replacement = read_html("https://www.imdb.com/user/ur56341222/ratings") %>%
+                html_nodes("div.header.filmosearch") %>%
+                html_text() %>%
+                sub(".*\\(of ([^)]*)\\).*", "movies (\\1) and", .),
+              x = readLines("index.Rmd")
+            ),
+            con = "index.Rmd"
+          )
+          rmarkdown::render("index.Rmd", output_dir = "docs")
+        shell: Rscript {0}
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "ci: automatic weekly update
+          
+          
+          Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          signoff: false
+          branch: auto-detected-updates
+          delete-branch: true
+          title: "Automatic weekly update"
+      - name: Auto approve
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ steps.cpr.outputs.pull-request-number }}
