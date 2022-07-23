@@ -40,13 +40,10 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v4
       with:
-        commit-message: "ci: automatic weekly update
-        
-        
-        Co-authored-by: Mickaël Canouil <8896044+mcanouil@users.noreply.github.com>"
+        commit-message: "ci: automatic update"
         signoff: false
         branch: auto-detected-updates
         delete-branch: true
-        title: "Automatic weekly update"
+        title: "Automatic update"
         committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
 
