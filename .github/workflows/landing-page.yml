@@ -40,14 +40,14 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: "ci: automatic weekly update
+          commit-message: "ci: automatic update
           
           
           Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
           signoff: false
           branch: auto-detected-updates
           delete-branch: true
-          title: "Automatic weekly update"
+          title: "Automatic update"
       - name: Auto approve
         if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v1
