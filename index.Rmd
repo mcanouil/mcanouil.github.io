@@ -36,6 +36,6 @@ body {
 ```
 
 
-I am currently working as a consultant in <b><i>Biostatistics</i></b> in the field of genetics, _i.e._, proteomics, metabolomics, transcriptomics, _etc._ (France, Lille/Paris).
+I am currently working as a consultant in <b><i>Biostatistics</i></b> in the field of genetics,<br>_i.e._, proteomics, metabolomics, transcriptomics, _etc._<br>in Lille & Paris, France.
 
 And when I am not working, I like watching movies (3,190) and playing with R!
