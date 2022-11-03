@@ -36,9 +36,6 @@ body {
 ```
 
 
-I am currently working as the <b>Head of Biostatistics</b>  
-of the <a href="http://www.good.cnrs.fr/?lang=en" style="color:white;"><b>Inserm U1283 / CNRS UMR 8199 unit</b>  
-<i>(Functional (Epi)genomics and Molecular Physiology of Diabetes and Related Diseases)</i></a>  
-for the <a href="https://pasteur-lille.fr/en/" style="color:white;"><b>Institut Pasteur de Lille</b></a> (France, Lille).
+I am currently working as a consultant in <b><i>Biostatistics</i></b> in the field of genetics, _i.e._, proteomics, metabolomics, transcriptomics, _etc._ (France, Lille/Paris).
 
 And when I am not working, I like watching movies (3,190) and playing with R!
