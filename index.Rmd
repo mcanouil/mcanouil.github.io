@@ -1,6 +1,6 @@
 ---
 title: "Hi 👋, I am Mickaël!"
-image: "https://avatars.githubusercontent.com/u/8896044"
+image: "https://github.com/mcanouil.png"
 color1: "#333333FF"
 color2: "#666666FF"
 angle: 145
@@ -14,20 +14,19 @@ links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/mickaelcanouil"
   - label: Mastodon
-    url: "https://fosstodon.org/@MickaelCanouil"
+    url: "https://fosstodon.org/\\@MickaelCanouil"
   - label: Twitter
     url: "https://twitter.com/mickaelcanouil"
-output:
-  postcards::onofre
+output: postcards::onofre
 ---
 
 ```{css, echo = FALSE}
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i);
-@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
 
 body {
   font-family: 'Alegreya Sans', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
 }
+
 .rounded-circle {
   border-style: solid;
   border-width: 2pt;
@@ -36,7 +35,6 @@ body {
   padding: 5pt;
 }
 ```
-
 
 I am currently working as a consultant in <b><i>Biostatistics</i></b> in the field of genetics,<br>_i.e._, proteomics, metabolomics, transcriptomics, _etc._<br>in Lille & Paris, France.
 
