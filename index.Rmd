@@ -6,15 +6,17 @@ color2: "#666666FF"
 angle: 145
 links:
   - label: Website
-    url: "https://mickael.canouil.fr/"
+    url: "https://mickael.canouil.fr"
   - label: Curriculum Vitae
-    url: "https://m.canouil.fr/curriculum-vitae/"
+    url: "https://m.canouil.fr/curriculum-vitae"
   - label: Github
-    url: "https://github.com/mcanouil/"
+    url: "https://github.com/mcanouil"
   - label: LinkedIn
-    url: "https://www.linkedin.com/in/mickaelcanouil/"
+    url: "https://www.linkedin.com/in/mickaelcanouil"
+  - label: Mastodon
+    url: "https://fosstodon.org/@MickaelCanouil"
   - label: Twitter
-    url: "https://twitter.com/mickaelcanouil/"
+    url: "https://twitter.com/mickaelcanouil"
 output:
   postcards::onofre
 ---
@@ -24,7 +26,7 @@ output:
 @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
 
 body {
-  font-family: 'Alegreya Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  font-family: 'Alegreya Sans', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
 }
 .rounded-circle {
   border-style: solid;
