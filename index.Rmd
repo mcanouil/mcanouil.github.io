@@ -8,7 +8,7 @@ links:
   - label: Website
     url: "https://mickael.canouil.fr"
   - label: Curriculum Vitae
-    url: "https://m.canouil.fr/curriculum-vitae"
+    url: "https://m.canouil.dev/curriculum-vitae"
   - label: Github
     url: "https://github.com/mcanouil"
   - label: LinkedIn
