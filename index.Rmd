@@ -36,7 +36,7 @@ body {
 }
 ```
 
-I am currently working as a consultant in __*Biostatistics*__, with a strong expertise in the field of genetics,<br>*i.e.*, genotyping, sequencing, proteomics, metabolomics, transcriptomics, *etc.* in Lille & Paris, France.<br>
+I am currently working as a consultant in <b><i>Biostatistics</i></b>, with a strong expertise in the field of genetics, <br><i>i.e.</i>, genotyping, sequencing, proteomics, metabolomics, transcriptomics, <i>etc.</i><br> in Lille & Paris, France.<br>
 Additionally, I am also a freelance, available for hire, to work on R and Quarto related projects.
 
 And when I am not working, I like watching movies (3,190) and playing with R!
