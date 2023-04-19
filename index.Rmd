@@ -17,6 +17,8 @@ links:
     url: "https://fosstodon.org/\\@MickaelCanouil"
   - label: Twitter
     url: "https://twitter.com/mickaelcanouil"
+  - label: Sponsor
+    url: "https://github.com/sponsors/mcanouil?o=esb"
 output: postcards::onofre
 ---
 
