@@ -15,8 +15,8 @@ links:
     url: "https://www.linkedin.com/in/mickaelcanouil"
   - label: Mastodon
     url: "https://fosstodon.org/\\@MickaelCanouil"
-  - label: Twitter
-    url: "https://twitter.com/mickaelcanouil"
+  - label: X
+    url: "https://x.com/mickaelcanouil"
   - label: Sponsor
     url: "https://github.com/sponsors/mcanouil?o=esb"
 output: postcards::onofre
@@ -41,4 +41,4 @@ body {
 I am currently working as a consultant in <b><i>Biostatistics</i></b>, with a strong expertise in the field of genetics, <br><i>i.e.</i>, genotyping, sequencing, proteomics, metabolomics, transcriptomics, <i>etc.</i><br> in Lille & Paris, France.<br>
 Additionally, I am also a <b><i>freelance</i></b>, available for hire to work on <b><i>R and Quarto related projects</i></b>.
 
-And when I am not working, I like watching movies (3,190) and playing with R!
+And when I am not working, I like watching movies (3,190) and playing with my black Labrador Retriever named Saga!
