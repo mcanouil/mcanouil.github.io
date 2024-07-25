@@ -1,0 +1,21 @@
+project:
+  type: website
+  resources: [.nojekyll, CNAME]
+format:
+  html:
+    theme: coeos.scss
+website:
+  title: "Mickaël CANOUIL - GitHub Profile"
+  description: "A landing page for Mickaël CANOUIL GitHub profile."
+  favicon: logo.svg
+  image: https://github.com/mcanouil.png
+  site-url: https://m.canouil.dev
+  open-graph: true
+  twitter-card: true
+  page-footer:
+    left: |
+      Powered by [{{< iconify simple-icons:quarto >}} Quarto](https://quarto.org).
+    center: |
+      &copy; 2024 Mickaël CANOUIL. [{{< iconify octicon:heart-fill-16 >}} Sponsor](https://github.com/sponsors/mcanouil?o=esb).
+    right: |
+      License: [CC BY NC SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).

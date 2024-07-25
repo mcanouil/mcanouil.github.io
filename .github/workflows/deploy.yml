@@ -51,11 +51,17 @@ jobs:
             /repos/mcanouil/mickael.canouil.fr/contents/assets/stylesheets/coeos.scss \
             --jq '.content' | base64 -d > coeos.scss
 
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo.svg \
+            --jq '.content' | base64 -d > logo.svg
+
           quarto add mcanouil/quarto-iconify --no-prompt --quiet
 
           touch .nojekyll
           echo "m.canouil.dev" > CNAME
-          echo -e "project:\n  type: website\n  resources: [.nojekyll, CNAME]\nformat:\n  html:\n    theme: coeos.scss" > _quarto.yml
+          cp .github/workflows/assets/_quarto.yml _quarto.yml
 
           quarto render index.qmd
 
