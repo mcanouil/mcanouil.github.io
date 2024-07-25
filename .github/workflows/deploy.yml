@@ -44,7 +44,8 @@ jobs:
             --jq '.content' | base64 -d > index.qmd
 
           sed -i 's|/assets/images/social-profile.png|https://github.com/mcanouil.png|g' index.qmd
-
+          sed -i 's|links:|links:\n    - text: "{{< iconify octicon:home-fill-16 >}}"\n      href: "https://mickael.canouil.fr/"\n      aria-label: "home logo for personal website"|' index.qmd
+          
           gh api \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
