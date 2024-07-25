@@ -4,6 +4,13 @@ project:
 format:
   html:
     theme: coeos.scss
+    include-in-header:
+      - text: |
+          <style type="text/css">
+          .nav-footer {
+            border-top: unset;
+          }
+          </style>
 website:
   title: "GitHub Profile"
   description: "A landing page for Mickaël CANOUIL GitHub profile."
