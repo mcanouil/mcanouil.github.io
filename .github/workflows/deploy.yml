@@ -43,7 +43,7 @@ jobs:
             /repos/mcanouil/mickael.canouil.fr/contents/index.qmd \
             --jq '.content' | base64 -d > index.qmd
 
-          sed -i '' 's|/assets/images/social-profile.png|https://github.com/mcanouil.png|g' index.qmd
+          sed -i 's|/assets/images/social-profile.png|https://github.com/mcanouil.png|g' index.qmd
 
           gh api \
             -H "Accept: application/vnd.github+json" \
