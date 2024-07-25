@@ -13,6 +13,7 @@ website:
   open-graph: true
   twitter-card: true
   page-footer:
+    border: false
     left: |
       Powered by [{{< iconify simple-icons:quarto >}} Quarto](https://quarto.org).
     center: |
