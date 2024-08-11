@@ -1,3 +1,3 @@
 # mcanouil.github.io
 
-Landing page of Mickaël Canouil
+Landing page of Mickaël CANOUIL
