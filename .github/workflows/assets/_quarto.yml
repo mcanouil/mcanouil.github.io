@@ -11,6 +11,11 @@ format:
             border-top: unset;
           }
           </style>
+    include-after-body:
+      - text: |
+          <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+          </script>
 website:
   title: "GitHub Profile"
   description: "A landing page for Mickaël CANOUIL GitHub profile."
