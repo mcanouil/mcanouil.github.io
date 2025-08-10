@@ -1,9 +1,18 @@
 project:
   type: website
   resources: [.nojekyll, CNAME]
+brand:
+  light: light.yml
+  dark: dark.yml
 format:
   html:
-    theme: coeos.scss
+    theme:
+      light:
+        - cosmo
+        - brand
+      dark:
+        - cosmo
+        - brand
     include-in-header:
       - text: |
           <style type="text/css">
