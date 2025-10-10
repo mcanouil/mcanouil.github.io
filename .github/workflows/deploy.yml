@@ -49,22 +49,11 @@ jobs:
           gh api \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/brand/light.yml \
-            --jq '.content' | base64 -d > light.yml
-
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/brand/dark.yml \
-            --jq '.content' | base64 -d > dark.yml
-
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
             /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo.svg \
             --jq '.content' | base64 -d > logo.svg
 
           quarto add mcanouil/quarto-iconify --no-prompt --quiet
+          quarto add mcanouil/quarto-mcanouil --no-prompt --quiet
 
           touch .nojekyll
           echo "m.canouil.dev" > CNAME
