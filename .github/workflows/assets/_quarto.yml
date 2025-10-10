@@ -1,9 +1,6 @@
 project:
   type: website
   resources: [.nojekyll, CNAME]
-brand:
-  light: light.yml
-  dark: dark.yml
 format:
   html:
     theme:
