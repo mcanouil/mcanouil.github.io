@@ -1,15 +1,19 @@
 project:
   type: website
-  resources: [.nojekyll, CNAME]
+  resources:
+    - .nojekyll
+    - CNAME
 format:
   html:
     theme:
       light:
         - cosmo
         - brand
+        - theme.scss
       dark:
         - cosmo
         - brand
+        - theme.scss
     include-in-header:
       - text: |
           <style type="text/css">

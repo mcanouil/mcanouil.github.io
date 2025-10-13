@@ -52,6 +52,12 @@ jobs:
             /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo.svg \
             --jq '.content' | base64 -d > logo.svg
 
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/mcanouil/mickael.canouil.fr/contents/assets/stylesheets/theme.scss \
+            --jq '.content' | base64 -d > theme.scss
+
           quarto add mcanouil/quarto-iconify --no-prompt --quiet
           quarto add mcanouil/quarto-mcanouil --no-prompt --quiet
 
