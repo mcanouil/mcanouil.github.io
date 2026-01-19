@@ -5,6 +5,10 @@ project:
     - CNAME
 format:
   html:
+    logo:
+      light: logo-dark-path.svg
+      dark: logo-light-path.svg
+    logo-alt: "Mickaël CANOUIL logo"
     theme:
       light:
         - cosmo
