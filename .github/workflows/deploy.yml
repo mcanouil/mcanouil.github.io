@@ -36,32 +36,28 @@ jobs:
         shell: bash
         run: |
           gh api \
-            -H "Accept: application/vnd.github+json" \
+            -H "Accept: application/vnd.github.raw" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/index.qmd \
-            --jq '.content' | base64 -d > index.qmd
+            /repos/mcanouil/mickael.canouil.fr/contents/index.qmd > index.qmd
 
           gh api \
-            -H "Accept: application/vnd.github+json" \
+            -H "Accept: application/vnd.github.raw" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/social-profile.png \
-            --jq '.content' | base64 -d > social-profile.png
+            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/social-profile.png > social-profile.png
 
           gh api \
-            -H "Accept: application/vnd.github+json" \
+            -H "Accept: application/vnd.github.raw" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo-light-path.svg \
-            --jq '.content' | base64 -d > logo-light-path.svg
+            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo-light-path.svg > logo-light-path.svg
 
           gh api \
-            -H "Accept: application/vnd.github+json" \
+            -H "Accept: application/vnd.github.raw" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/stylesheets/theme.scss \
-            --jq '.content' | base64 -d > theme.scss
+            /repos/mcanouil/mickael.canouil.fr/contents/assets/stylesheets/theme.scss > theme.scss
 
           sed -i 's|/assets/images/social-profile.png|social-profile.png|g' index.qmd
           sed -i 's|/assets/images/logo-light-path.svg|logo-light-path.svg|g' index.qmd
-          sed -i 's|links:|links:\n    - text: "{{< iconify octicon:home-fill-16 >}}"\n      href: "https://mickael.canouil.fr/"\n      aria-label: "home logo for personal website"|' index.qmd
+          sed -i 's|links:|links:\n    - text: "{{< iconify octicon:home-fill-16 >}}"\n      href: "https://mickael.canouil.fr/"\n      target: "_blank"\n      rel: "noopener noreferrer"\n      aria-label: "home logo for personal website"|' index.qmd
 
           quarto add mcanouil/quarto-iconify --no-prompt --quiet
           quarto add mcanouil/quarto-mcanouil --no-prompt --quiet
