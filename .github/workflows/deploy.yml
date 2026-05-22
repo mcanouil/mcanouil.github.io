@@ -35,44 +35,29 @@ jobs:
       - name: Render Quarto Project
         shell: bash
         run: |
-          gh api \
-            -H "Accept: application/vnd.github.raw" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/index.qmd > index.qmd
+          git clone --no-checkout --depth 1 --filter=blob:none \
+            "https://x-access-token:${GH_TOKEN}@github.com/mcanouil/mickael.canouil.fr.git" upstream
+          git -C upstream sparse-checkout init --cone
+          git -C upstream sparse-checkout set \
+            assets/images \
+            _extensions/mickaelcanouilfr \
+            _extensions/mcanouil
+          git -C upstream checkout
 
-          gh api \
-            -H "Accept: application/vnd.github.raw" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/social-profile.png > social-profile.png
+          cp upstream/index.qmd index.qmd
+          mkdir -p assets/images _extensions
+          cp upstream/assets/images/profile.png upstream/assets/images/social-profile.png assets/images/
+          cp -R upstream/_extensions/mickaelcanouilfr _extensions/
+          cp -R upstream/_extensions/mcanouil _extensions/
+          rm -rf upstream
 
-          gh api \
-            -H "Accept: application/vnd.github.raw" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/logo-light-path.svg > logo-light-path.svg
-
-          gh api \
-            -H "Accept: application/vnd.github.raw" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/images/profile.png > profile.png
-
-          gh api \
-            -H "Accept: application/vnd.github.raw" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/mcanouil/mickael.canouil.fr/contents/assets/stylesheets/theme.scss > theme.scss
-
-          sed -i 's|/assets/images/profile.png|profile.png|g' index.qmd
-          sed -i 's|/assets/images/social-profile.png|social-profile.png|g' index.qmd
-          sed -i 's|/assets/images/logo-light-path.svg|logo-light-path.svg|g' index.qmd
-          sed -i 's|links:|links:\n    - text: "{{< iconify octicon:home-fill-16 >}}"\n      href: "https://mickael.canouil.fr/"\n      target: "_blank"\n      rel: "noopener noreferrer"\n      aria-label: "home logo for personal website"|' index.qmd
-
-          quarto add mcanouil/quarto-iconify --no-prompt --quiet
-          quarto add mcanouil/quarto-mcanouil --no-prompt --quiet
+          sed -i 's|  links:|  links:\n    - text: "{{< iconify octicon:home-fill-16 >}}"\n      href: "https://mickael.canouil.fr/"\n      target: "_blank"\n      rel: "noopener noreferrer"\n      aria-label: "home logo for personal website"|' index.qmd
 
           touch .nojekyll
           echo "m.canouil.dev" > CNAME
           cp .github/workflows/assets/_quarto.yml _quarto.yml
 
-          quarto render index.qmd
+          quarto render
 
       - uses: actions/configure-pages@v5
 

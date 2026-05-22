@@ -1,40 +1,16 @@
 project:
   type: website
+  render:
+    - index.qmd
   resources:
     - .nojekyll
     - CNAME
-format:
-  html:
-    logo:
-      light: logo-dark-path.svg
-      dark: logo-light-path.svg
-    logo-alt: "Mickaël CANOUIL logo"
-    theme:
-      light:
-        - cosmo
-        - brand
-        - theme.scss
-      dark:
-        - cosmo
-        - brand
-        - theme.scss
-    include-in-header:
-      - text: |
-          <style type="text/css">
-          .nav-footer {
-            border-top: unset;
-          }
-          </style>
-    include-after-body:
-      - text: |
-          <script>
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-          </script>
+format: mickaelcanouilfr-html
 website:
   title: "GitHub Profile"
   description: "A landing page for Mickaël CANOUIL GitHub profile."
-  favicon: logo-light-path.svg
-  image: social-profile.png
+  favicon: _extensions/mickaelcanouilfr/assets/images/logo-gold-path.svg
+  image: assets/images/social-profile.png
   site-url: https://m.canouil.dev
   open-graph: true
   twitter-card: true
@@ -45,4 +21,4 @@ website:
     center: |
       &copy; []{#current-year} [Mickaël CANOUIL](https://mickael.canouil.fr){target="_blank" rel="noopener noreferrer"}. [{{< iconify octicon:heart-fill-16 title="Heart" label="Heart" >}} Sponsor](https://github.com/sponsors/mcanouil?o=esb){target="_blank" rel="noopener noreferrer"}.
     right: |
-      License: [CC BY NC SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0){target="_blank" rel="noopener noreferrer"}.
+      License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0){target="_blank" rel="noopener noreferrer"}.
