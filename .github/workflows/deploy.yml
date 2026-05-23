@@ -35,8 +35,9 @@ jobs:
       - name: Render Quarto Project
         shell: bash
         run: |
+          gh auth setup-git
           git clone --no-checkout --depth 1 --filter=blob:none \
-            "https://x-access-token:${GH_TOKEN}@github.com/mcanouil/mickael.canouil.fr.git" upstream
+            "https://github.com/mcanouil/mickael.canouil.fr.git" upstream
           git -C upstream sparse-checkout init --cone
           git -C upstream sparse-checkout set \
             assets/images \
