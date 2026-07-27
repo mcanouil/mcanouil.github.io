@@ -41,12 +41,14 @@ jobs:
           git -C upstream sparse-checkout init --cone
           git -C upstream sparse-checkout set \
             assets/images \
+            _includes \
             _extensions/mickaelcanouilfr \
             _extensions/mcanouil
           git -C upstream checkout
 
-          cp upstream/index.qmd index.qmd
+          cp upstream/_profile.qmd index.qmd
           mkdir -p assets/images _extensions
+          cp -R upstream/_includes _includes
           cp upstream/assets/images/profile.png upstream/assets/images/social-profile.png assets/images/
           cp -R upstream/_extensions/mickaelcanouilfr _extensions/
           cp -R upstream/_extensions/mcanouil _extensions/
