@@ -50,6 +50,9 @@ jobs:
           mkdir -p assets/images _extensions
           cp -R upstream/_includes _includes
           cp upstream/assets/images/profile.png upstream/assets/images/social-profile.png assets/images/
+          cp upstream/assets/images/icon.svg upstream/assets/images/apple-touch-icon.png \
+            upstream/assets/images/icon-192.png upstream/assets/images/icon-512.png assets/images/
+          cp upstream/favicon.ico favicon.ico
           cp -R upstream/_extensions/mickaelcanouilfr _extensions/
           cp -R upstream/_extensions/mcanouil _extensions/
           rm -rf upstream
@@ -59,6 +62,7 @@ jobs:
           touch .nojekyll
           echo "m.canouil.dev" > CNAME
           cp .github/workflows/assets/_quarto.yml _quarto.yml
+          cp .github/workflows/assets/site.webmanifest site.webmanifest
 
           quarto render
 
