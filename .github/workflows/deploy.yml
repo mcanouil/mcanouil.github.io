@@ -47,6 +47,7 @@ jobs:
           git -C upstream checkout
 
           cp upstream/_profile.qmd index.qmd
+          cp upstream/_about.yml _about.yml
           mkdir -p assets/images _extensions
           cp -R upstream/_includes _includes
           cp upstream/assets/images/profile.png upstream/assets/images/social-profile.png assets/images/
@@ -56,8 +57,6 @@ jobs:
           cp -R upstream/_extensions/mickaelcanouilfr _extensions/
           cp -R upstream/_extensions/mcanouil _extensions/
           rm -rf upstream
-
-          sed -i 's|  links:|  links:\n    - text: '\''{{< iconify octicon:home-fill-16 title="mickael.canouil.fr" label="mickael.canouil.fr" >}}'\''\n      href: "https://mickael.canouil.fr/"\n      target: "_blank"\n      rel: "noopener noreferrer"\n      aria-label: "home logo for personal website"|' index.qmd
 
           touch .nojekyll
           echo "m.canouil.dev" > CNAME
