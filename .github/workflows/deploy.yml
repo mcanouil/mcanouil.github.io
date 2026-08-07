@@ -47,10 +47,10 @@ jobs:
           git -C upstream checkout
 
           cp upstream/_profile.qmd index.qmd
-          cp upstream/_about.yml _about.yml
+          cp upstream/_home.yml _home.yml
           mkdir -p assets/images _extensions
           cp -R upstream/_includes _includes
-          cp upstream/assets/images/profile.png upstream/assets/images/social-profile.png assets/images/
+          cp upstream/assets/images/profile.png upstream/assets/images/og-image.png assets/images/
           cp upstream/assets/images/icon.svg upstream/assets/images/apple-touch-icon.png \
             upstream/assets/images/icon-192.png upstream/assets/images/icon-512.png assets/images/
           cp upstream/favicon.ico favicon.ico

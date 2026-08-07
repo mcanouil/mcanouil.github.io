@@ -16,7 +16,7 @@ website:
   title: "GitHub Profile"
   description: "A landing page for Mickaël CANOUIL GitHub profile."
   favicon: favicon.ico
-  image: assets/images/social-profile.png
+  image: assets/images/og-image.png
   site-url: &site-url https://m.canouil.dev
   open-graph: true
   twitter-card: true
